@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VALORA | Handmade gifts for the feelings that are hard to say</title>
+  <meta name="description" content="VALORA makes handmade fuzzy wire bouquets and sentimental gifts. Message us on Facebook to order.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Reusable drawings (used by image placeholders and decorations) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="flower" viewBox="0 0 64 64"><g fill="currentColor" opacity=".6"><circle cx="32" cy="15" r="11"/><circle cx="49" cy="27" r="11"/><circle cx="43" cy="47" r="11"/><circle cx="21" cy="47" r="11"/><circle cx="15" cy="27" r="11"/></g><circle cx="32" cy="32" r="7" fill="#D8B477"/></symbol>
+    <symbol id="leaf" viewBox="0 0 60 100"><path d="M30 2C58 30 58 70 30 98 2 70 2 30 30 2Z" fill="currentColor"/><path d="M30 20V90" stroke="#FFF7E8" stroke-width="2" fill="none"/></symbol>
+  </svg>
+
+  <!-- A. Announcement bar (text can also be changed in script.js) -->
+  <div class="announce" id="announce">A little love, handmade just for you ♡</div>
+
+  <!-- B. Navigation -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="VALORA home">
+        <span class="wordmark" id="wordmark">VALORA</span>
+        <img id="logo" src="images/logo.png" alt="VALORA logo" hidden>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#gifts">Our Gifts</a>
+        <a href="#story">Our Story</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary btn-small" data-fb href="https://www.facebook.com/profile.php?id=61595410284385" target="_blank" rel="noopener noreferrer">Message Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- C. Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="label">Handmade with love</p>
+          <h1 data-tagline>For all the love you don't know how to say.</h1>
+          <p class="lead">Some feelings are too big for words. Our handmade gifts help you say what your heart has been trying to tell them.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#gifts">Find Your Kind of Love</a>
+            <a class="btn btn-ghost" href="#gifts">Explore Our Gifts</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+          <svg class="leaf l1" aria-hidden="true"><use href="#leaf"/></svg>
+          <svg class="leaf l2" aria-hidden="true"><use href="#leaf"/></svg>
+          <div class="frame media" data-src="images/hero-bouquet.jpg" data-alt="A handmade VALORA fuzzy wire bouquet" data-text="Your hero photo goes here" data-sub="Photo coming soon ♡"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- D. Brand statement -->
+    <section class="statement">
+      <div class="container reveal">
+        <h2>Some feelings deserve more than a message.</h2>
+        <p>Whether it's a little thank-you, a quiet confession, or a reminder that someone matters, VALORA creates thoughtful gifts for the feelings that are sometimes hardest to express.</p>
+      </div>
+    </section>
+
+    <!-- E. Gift finder + product collection (cards are built by script.js) -->
+    <section class="gifts" id="gifts">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Little Gifts, Big Feelings</h2>
+          <p>Handmade fuzzy wire bouquets, created to make someone feel remembered.</p>
+        </div>
+
+        <form class="finder reveal" id="finder">
+          <h3>Not sure what to give?</h3>
+          <div class="finder-row">
+            <label for="occasion" class="sr-only">Who is the gift for?</label>
+            <select id="occasion">
+              <option value="special">Someone special</option>
+              <option value="bestfriend">Your best friend</option>
+              <option value="thankyou">A little thank-you</option>
+              <option value="justbecause">Just because</option>
+            </select>
+            <button class="btn btn-sage" type="submit">Search</button>
+          </div>
+          <p class="finder-result" id="finder-result" aria-live="polite"></p>
+        </form>
+
+        <div class="filters" id="filters" role="group" aria-label="Filter gifts by category" hidden></div>
+        <div class="grid" id="product-grid"></div>
+        <noscript><p class="empty">Please enable JavaScript to see our gifts, or message us on Facebook.</p></noscript>
+
+        <!-- Future collections: set showFutureSection to false in script.js to hide -->
+        <p class="future reveal" id="future">More ways to say it are on the way ♡</p>
+      </div>
+    </section>
+
+    <!-- F. About -->
+    <section class="about" id="story">
+      <div class="container about-grid">
+        <div class="media about-img reveal" data-src="images/about-valora.jpg" data-alt="Behind the scenes at VALORA" data-text="Your behind-the-scenes photo goes here" data-sub="Photo coming soon ♡"></div>
+        <div class="reveal">
+          <h2>Made by Hand. Meant from the Heart.</h2>
+          <p>At VALORA, we believe the smallest gestures can carry the biggest feelings. Our fuzzy wire bouquets are handmade with care for the moments when you want someone to feel seen, remembered, and appreciated.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- G. Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <h2>Ready to say it without saying it?</h2>
+          <p>Find a little something that feels like them. When you're ready, send us a message and let's make someone's day.</p>
+          <a class="btn btn-primary" data-fb href="https://www.facebook.com/profile.php?id=61595410284385" target="_blank" rel="noopener noreferrer">Message VALORA on Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div><p class="wordmark">VALORA</p><p data-tagline>For all the love you don't know how to say.</p></div>
+      <nav aria-label="Footer">
+        <a href="#home">Home</a><a href="#gifts">Our Gifts</a><a href="#story">Our Story</a><a href="#contact">Contact</a>
+        <a data-fb href="https://www.facebook.com/profile.php?id=61595410284385" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </nav>
+    </div>
+    <p class="copy">© <span id="year">2026</span> VALORA. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
